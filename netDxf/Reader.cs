@@ -208,12 +208,12 @@ namespace netDxf
             try
             {
                 this.input = File.OpenRead(this.file);
-                this.reader = new StreamReader(this.input, Encoding.ASCII);
+                this.reader = new StreamReader(this.input, Encoding.GetEncoding(932));
                 this.isFileOpen = true;
             }
             catch (Exception ex)
             {
-                throw (new DxfException(this.file, "Error al intentar abrir el archivo.", ex));
+                throw (new DxfException(this.file, "can't open file!", ex));
             }
         }
 
@@ -567,8 +567,8 @@ namespace netDxf
             AciColor color = AciColor.ByLayer;
             LineType lineType = LineType.ByLayer;
             TextStyle style = TextStyle.Default;
-            double height = 0.0;
-            double widthFactor = 0.0;
+            double height = 1.0;
+            double widthFactor = 1.0;
             int horizontalAlignment = 0;
             int verticalAlignment = 0;
             double rotation = 0.0;
@@ -859,7 +859,7 @@ namespace netDxf
                                                                          "Invalid value " + dxfPairInfo.Value + " in code " + dxfPairInfo.Code + " line " + this.fileLine);
                         }
 
-                        color = new AciColor(short.Parse(dxfPairInfo.Value));
+                        color = new AciColor(index);
                         break;
                     case 6:
                         if (string.IsNullOrEmpty(dxfPairInfo.Value))
