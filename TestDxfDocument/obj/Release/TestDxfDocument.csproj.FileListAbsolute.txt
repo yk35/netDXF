@@ -6,3 +6,11 @@ C:\Development\netDXF\TestDxfDocument\bin\Release\netDxf.xml
 C:\Development\netDXF\TestDxfDocument\obj\Release\TestDxfDocument.csprojResolveAssemblyReference.cache
 C:\Development\netDXF\TestDxfDocument\obj\Release\TestDxfDocument.exe
 C:\Development\netDXF\TestDxfDocument\obj\Release\TestDxfDocument.pdb
+D:\project\2016\長谷工\netDXF\TestDxfDocument\bin\Release\TestDxfDocument.exe
+D:\project\2016\長谷工\netDXF\TestDxfDocument\bin\Release\TestDxfDocument.pdb
+D:\project\2016\長谷工\netDXF\TestDxfDocument\bin\Release\netDxf.dll
+D:\project\2016\長谷工\netDXF\TestDxfDocument\bin\Release\netDxf.pdb
+D:\project\2016\長谷工\netDXF\TestDxfDocument\bin\Release\netDxf.xml
+D:\project\2016\長谷工\netDXF\TestDxfDocument\obj\Release\TestDxfDocument.csprojResolveAssemblyReference.cache
+D:\project\2016\長谷工\netDXF\TestDxfDocument\obj\Release\TestDxfDocument.exe
+D:\project\2016\長谷工\netDXF\TestDxfDocument\obj\Release\TestDxfDocument.pdb

@@ -9,3 +9,8 @@ C:\Development\net_DXF\netDxf\bin\Release\netDxf.pdb
 C:\Development\net_DXF\netDxf\obj\Release\netDxf.csprojResolveAssemblyReference.cache
 C:\Development\net_DXF\netDxf\obj\Release\netDxf.dll
 C:\Development\net_DXF\netDxf\obj\Release\netDxf.pdb
+D:\project\2016\長谷工\netDXF\netDxf\bin\Release\netDxf.xml
+D:\project\2016\長谷工\netDXF\netDxf\bin\Release\netDxf.dll
+D:\project\2016\長谷工\netDXF\netDxf\bin\Release\netDxf.pdb
+D:\project\2016\長谷工\netDXF\netDxf\obj\Release\netDxf.dll
+D:\project\2016\長谷工\netDXF\netDxf\obj\Release\netDxf.pdb

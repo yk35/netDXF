@@ -477,7 +477,7 @@ namespace netDxf
             // read the end bloc object until a new element is found
             dxfPairInfo = this.ReadCodePair();
             string endBlockHandle = string.Empty;
-            Layer endBlockLayer = layer;
+            Layer endBlockLayer = layer ?? Layer.Default;
             while (dxfPairInfo.Code != 0)
             {
                 switch (dxfPairInfo.Code)
@@ -498,7 +498,7 @@ namespace netDxf
             Block block = new Block(name)
                               {
                                   BasePoint = basePoint,
-                                  Layer = layer,
+                                  Layer = layer ?? Layer.Default,
                                   Entities = entities,
                                   Attributes = attdefs,
                                   Handle = handle,
