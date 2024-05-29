@@ -967,7 +967,8 @@ namespace netDxf
                 {
                     Debug.Assert(dxfPairInfo.Code == 0); //el código 0 indica el inicio de una nueva capa
                     TextStyle style = this.ReadTextStyle();
-                    this.textStyles.Add(style.Name, style);
+                    if (style != null)
+                        this.textStyles.Add(style.Name, style);
                 }
                 else
                 {
@@ -1001,16 +1002,32 @@ namespace netDxf
                     case 2:
                         if (string.IsNullOrEmpty(dxfPairInfo.Value))
                         {
-                            throw new DxfInvalidCodeValueEntityException(dxfPairInfo.Code, dxfPairInfo.Value, this.file,
-                                                                         "Invalid value " + dxfPairInfo.Value + " in code " + dxfPairInfo.Code + " line " + this.fileLine);
+                            // throw new DxfInvalidCodeValueEntityException(dxfPairInfo.Code, dxfPairInfo.Value, this.file,
+                            //                                              "Invalid value " + dxfPairInfo.Value + " in code " + dxfPairInfo.Code + " line " + this.fileLine);
+                            do
+                            {
+                                dxfPairInfo = ReadCodePair();
+
+                            } while (dxfPairInfo.Code != 0);
+
+                            return null;
                         }
                         name = dxfPairInfo.Value;
                         break;
                     case 3:
                         if (string.IsNullOrEmpty(dxfPairInfo.Value))
                         {
-                            throw new DxfInvalidCodeValueEntityException(dxfPairInfo.Code, dxfPairInfo.Value, this.file,
-                                                                         "Invalid value " + dxfPairInfo.Value + " in code " + dxfPairInfo.Code + " line " + this.fileLine);
+                            // throw new DxfInvalidCodeValueEntityException(dxfPairInfo.Code, dxfPairInfo.Value, this.file,
+                            //                                              "Invalid value " + dxfPairInfo.Value + " in code " + dxfPairInfo.Code + " line " + this.fileLine);
+                            
+                            // skip to code=0
+                            do
+                            {
+                                dxfPairInfo = ReadCodePair();
+
+                            } while (dxfPairInfo.Code != 0);
+
+                            return null;
                         }
                         font = dxfPairInfo.Value;
                         break;
