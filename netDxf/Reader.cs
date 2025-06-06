@@ -409,7 +409,11 @@ namespace netDxf
                 {
                     case StringCode.BeginBlock:
                         Block block = this.ReadBlock();
-                        this.blocks.Add(block.Name, block);
+                        // add the block to the blocks collection if it is not already there
+                        if (!this.blocks.ContainsKey(block.Name))
+                        {
+                            this.blocks.Add(block.Name, block);
+                        }
                         break;
                     default:
                         dxfPairInfo = this.ReadCodePair();
